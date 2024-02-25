@@ -1,44 +1,22 @@
-# Cuadrante
 
-Certainly! Here's a simple README for the provided Python code:
-
-Point Quadrant Determination
-This Python program prompts the user to input the coordinates of a point in the plane (x, y) and then determines and prints the quadrant in which the point is located.
+Coordinate Location Finder
+This simple Python script takes user-inputted values for x and y coordinates and determines their location in a Cartesian plane. It categorizes the location as Origin, X-axis, Y-axis, or one of the four quadrants (I, II, III, IV).
 
 Usage
-Run the Python script (quadrant_determination.py).
-Enter the x and y coordinates as prompted.
-The program will output a message indicating the quadrant in which the point is located.
+Run the script in a Python environment.
+Enter the values for x and y when prompted.
+The script will determine the location based on the entered coordinates and display the result.
 Code Explanation
-The main functionality is encapsulated in the determine_quadrant function, which takes the x and y coordinates as parameters and returns a string indicating the quadrant. The program then takes user input, calls this function, and prints the result.
+The script consists of three main functions:
 
-python
-Copy code
-def determine_quadrant(x, y):
-    # ... (code to determine quadrant)
+get_values()
+This function attempts to get user-inputted numeric values for x and y coordinates. It handles the case where non-numeric values are entered and provides appropriate feedback.
 
-# Ask the user to input coordinates
-try:
-    x = int(input("Enter the value of x: "))
-    y = int(input("Enter the value of y: "))
-    
-    # Determine the quadrant
-    result = determine_quadrant(x, y)
-    
-    # Print the result
-    print(result)
+determine_location(x, y)
+This function categorizes the location of the coordinates based on their values, classifying them into categories like Origin, X-axis, Y-axis, or one of the four quadrants.
 
-except ValueError:
-    print("Error: Enter valid integer values for x and y.")
-Quadrant Definitions
-First Quadrant: x > 0 and y > 0
-Second Quadrant: x < 0 and y > 0
-Third Quadrant: x < 0 and y < 0
-Fourth Quadrant: x > 0 and y < 0
-On Y-axis: x == 0 and y != 0
-On X-axis: x != 0 and y == 0
-At Origin: x == 0 and y == 0
-Input Validation
-The program includes basic input validation to ensure that the user enters valid integer values for x and y. If non-integer values are entered, an error message is displayed.
+main()
+The main function coordinates the flow of the program. It gets user input, determines the location, and prints the result. It also handles errors when obtaining input values.
 
-Feel free to use and modify this code as needed for your specific requirements.
+Conclusion
+This script demonstrates a basic use case of determining the location of coordinates in a Cartesian plane. It can serve as a foundation for more complex applications involving coordinate geometry. The modular structure allows for easy modification and extension, making it a starting point for further development.
