@@ -1,40 +1,40 @@
-def determine_quadrant(x, y):
-    """
-    Determines the quadrant in which a point is located based on its coordinates (x, y).
+import os
 
-    Parameters:
-    - x (int): The x-coordinate of the point.
-    - y (int): The y-coordinate of the point.
+def get_values():
+    try:
+        x = int(input('Enter the value of x: '))
+        y = int(input('Enter the value of y: '))
+        return x, y
+    except ValueError:
+        print("Please enter numeric values.")
+        return None, None
 
-    Returns:
-    str: A message indicating the quadrant in which the point is located.
-    """
-    if x > 0 and y > 0:
-        return "The point is located in the first quadrant."
+def determine_location(x, y):
+    if x == 0 and y == 0:
+        return 'Origin'
+    elif x == 0:
+        return 'Y-axis'
+    elif y == 0:
+        return 'X-axis'
+    elif x > 0 and y > 0:
+        return 'Quadrant I'
     elif x < 0 and y > 0:
-        return "The point is located in the second quadrant."
+        return 'Quadrant II'
     elif x < 0 and y < 0:
-        return "The point is located in the third quadrant."
+        return 'Quadrant III'
     elif x > 0 and y < 0:
-        return "The point is located in the fourth quadrant."
-    elif x == 0 and y != 0:
-        return "The point is located on the Y-axis."
-    elif x != 0 and y == 0:
-        return "The point is located on the X-axis."
-    elif x == 0 and y == 0:
-        return "The point is located at the origin."
+        return 'Quadrant IV'
 
+def main():
+    x, y = get_values()
 
-# Ask the user to input coordinates
-try:
-    x = int(input("Enter the value of x: "))
-    y = int(input("Enter the value of y: "))
+    if x is not None and y is not None:
+        location = determine_location(x, y)
+        print(f'Location: {location}')
+    else:
+        print('Error entering values.')
 
-    # Determine the quadrant
-    result = determine_quadrant(x, y)
+    os.system('pause')
 
-    # Print the result
-    print(result)
-
-except ValueError:
-    print("Error: Enter valid integer values for x and y.")
+if __name__ == "__main__":
+    main()
